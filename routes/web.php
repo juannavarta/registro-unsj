@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AnimalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -24,4 +25,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/users', [UserController::class, 'index']);
 
+Route::get('/animals', [AnimalController::class, 'index'])->name('animals.index');
+Route::post('/animals', [AnimalController::class, 'store'])->name('animals.store');
+Route::get('/animals/{id}/edit', [AnimalController::class, 'edit'])->name('animals.edit');
+Route::put('/animals/{id}', [AnimalController::class, 'update'])->name('animals.update');
+Route::delete('/animals/{id}', [AnimalController::class, 'destroy'])->name('animals.destroy');
 require __DIR__.'/auth.php';
