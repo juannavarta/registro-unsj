@@ -78,6 +78,12 @@
                     </button>
                 </div>
             </form>
+            <form action="{{ route('animals.reset') }}" method="POST" onsubmit="return confirm('¿Estás seguro de que querés reiniciar todos los datos?');" class="mt-3 flex justify-end">
+                @csrf
+                <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600 dark:focus:ring-offset-purple-900 sm:w-auto">
+                    Resetear datos
+                </button>
+            </form>
         </section>
 
         <section aria-labelledby="animal-list-title" class="overflow-hidden rounded-2xl border border-pink-200 bg-white shadow-sm dark:border-purple-800 dark:bg-purple-900/70">
